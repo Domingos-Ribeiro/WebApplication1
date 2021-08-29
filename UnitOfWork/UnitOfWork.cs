@@ -26,5 +26,9 @@ namespace WebApplication1.UnitOfWork
                 return productsRepository;
             }
         }
+        public void Commit()
+        {
+            context.SaveChanges();
+        }
     }
 }
