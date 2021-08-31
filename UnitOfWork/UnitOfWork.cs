@@ -19,7 +19,7 @@ namespace WebApplication1.UnitOfWork
         {
             get
             {
-                if(ProductsRepository == null)
+                if (ProductsRepository == null)
                 {
                     productsRepository = new Repository<Products>(context);
                 }

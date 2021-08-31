@@ -23,7 +23,10 @@ namespace WebApplication1.Repository
         {
             Context.Dispose();
         }
-       
+        public void Commit()
+        {
+            Context.SaveChanges();
+        }
         public void Edit(T entity)
         {
             Context.Entry(entity).State = EntityState.Modified;
@@ -51,7 +54,7 @@ namespace WebApplication1.Repository
 
         public void Add(T entity)
         {
-            Context.Set<T>().Add(entity);
+            Context.Set<T>().Remove(entity);
         }
     }
 }
